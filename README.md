@@ -23,7 +23,7 @@ Microsoft.EntityFrameworkCore.[Provider] -Tables table1,table2,table3`
 
 `Scaffold-DbContext 'Server=DESKTOP-JFVV9NF;Database=Northwind;User Id=sa;Password=eymen123' Microsoft.EntityFrameworkCore.SqlServer -ContextDir Data -OutputDir Models`
 
-`ContectDir` -> Context hangi path üzerinde oluşacağını seçiyor.
+`ContectDir` -> Context hangi path üzerinde oluşacağını seçiyor. </br>
 `OutputDir`  -> Modellerin hangi path üzerinde oluşacağını seçiyor.
 
 #### Model Güncelleme
