@@ -33,3 +33,28 @@ Microsoft.EntityFrameworkCore.[Provider] -Tables table1,table2,table3`
 #### Model Özelleştirme
 
 Force komutunu kullanırken modellerimizin etkilenmesini istemiyorsak farklı klasör altında aynı propları tanımlayabiliriz. Namespacelerini aynı yaparak class tipini partial yaparsak Force komutundan yalnızca hedef class etkilenir.
+
+
+### EF CORE CodeFirst
+
+İndirilmesi gereken paketler :
+
+* Microsoft.EntityFrameworkCore.Tools
+* Microsoft.EntityFrameworkCore.[Provider] -> SqlServer
+
+DbContext üzerinden veritabanına karşılık gelen bir class türetmek için using bloğumuza alt satırdaki kütüphaneyi ekliyoruz.
+
+`using Microsoft.EntityFrameworkCore;`
+
+Gerekli Entityler oluşturulduktan sonra bu classları veritabanına modellemek için DbContext class'ı içinde aşağıdaki komutlar kullanılacak.
+
+`public DbSet<Product> Products { get; set; }`
+`public DbSet<Order> Orders { get; set; }`
+
+Package Manager Console üzerinden migrations oluşturmak için;
+
+`add-migration [migration Name]`
+
+
+
+
