@@ -2,7 +2,7 @@
 
 namespace CodeFirst.Migrations
 {
-    public partial class firstMigration : Migration
+    public partial class migration_1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,8 +14,7 @@ namespace CodeFirst.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ItemQuantity = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    TotalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    CustomerName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    TotalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {

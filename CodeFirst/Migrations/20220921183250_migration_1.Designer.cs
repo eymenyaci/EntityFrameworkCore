@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CodeFirst.Migrations
 {
     [DbContext(typeof(ECommerceDbContext))]
-    [Migration("20220920215800_firstMigration")]
-    partial class firstMigration
+    [Migration("20220921183250_migration_1")]
+    partial class migration_1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,9 +26,6 @@ namespace CodeFirst.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
-
-                    b.Property<string>("CustomerName")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ItemQuantity")
                         .HasColumnType("int");

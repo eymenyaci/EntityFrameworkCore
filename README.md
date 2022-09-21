@@ -4,14 +4,14 @@
 
 ### EF CORE Database First
 
-İndirilmesi gereken paketler :
+#### İndirilmesi gereken paketler :
 
 * Microsoft.EntityFrameworkCore.Tools
 * Microsoft.EntityFrameworkCore.[Provider] -> SqlServer
 
 #### Model Yaratma
 
-`Scaffold-DbContext 'Server=DESKTOP-JFVV9NF;Database=Northwind;User Id=sa;Password=eymen123' Microsoft.EntityFrameworkCore.SqlServer`
+`Scaffold-DbContext [ConnectionString] Microsoft.EntityFrameworkCore.SqlServer`
 Bu komut Entity sınıflarını proje içinde otomatik olarak oluşturuyor.
 
 Belirli tabloların gelmesini istiyorsak;
@@ -21,14 +21,14 @@ Microsoft.EntityFrameworkCore.[Provider] -Tables table1,table2,table3`
 
 #### Path ve Namespace Belirleme
 
-`Scaffold-DbContext 'Server=DESKTOP-JFVV9NF;Database=Northwind;User Id=sa;Password=eymen123' Microsoft.EntityFrameworkCore.SqlServer -ContextDir Data -OutputDir Models`
+`Scaffold-DbContext [ConnectionString] Microsoft.EntityFrameworkCore.SqlServer -ContextDir Data -OutputDir Models`
 
 `ContectDir` -> Context hangi path üzerinde oluşacağını seçiyor. </br>
 `OutputDir`  -> Modellerin hangi path üzerinde oluşacağını seçiyor.
 
 #### Model Güncelleme
 
-`Scaffold-DbContext 'Server=DESKTOP-JFVV9NF;Database=Northwind;User Id=sa;Password=eymen123' Microsoft.EntityFrameworkCore.SqlServer -Force`
+`Scaffold-DbContext [ConnectionString] Microsoft.EntityFrameworkCore.SqlServer -Force`
 
 #### Model Özelleştirme
 
@@ -37,7 +37,7 @@ Force komutunu kullanırken modellerimizin etkilenmesini istemiyorsak farklı kl
 
 ### EF CORE CodeFirst
 
-İndirilmesi gereken paketler :
+#### İndirilmesi gereken paketler :
 
 * Microsoft.EntityFrameworkCore.Tools
 * Microsoft.EntityFrameworkCore.[Provider] -> SqlServer
@@ -51,9 +51,37 @@ Gerekli Entityler oluşturulduktan sonra bu classları veritabanına modellemek 
 `public DbSet<Product> Products { get; set; }`
 `public DbSet<Order> Orders { get; set; }`
 
-Package Manager Console üzerinden migrations oluşturmak için;
+#### Package Manager Console üzerinden migrations oluşturmak için;
 
 `add-migration [migration Name]`
+
+#### Path ve Namespace Belirleme
+
+`add-migration [migrationName] -OutputDir [Path]`
+
+#### Migration silme
+
+`remove-migration`
+
+#### Migration getirme
+
+`get-migration`
+
+#### Migrationları database gönderme
+
+`update-database`
+
+#### Entitylerde yapısal bir değişiklik yapılırsa ?
+
+Yeni bir migration eklenmelidir. Bu işlem sonrasında ise `update-database` kullanılarak veritabanında değişiklik gerçekleştirilebilir.
+
+#### Migrationlara dönme
+
+`update-database migration_1`
+
+
+
+
 
 
 

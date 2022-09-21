@@ -29,5 +29,6 @@ namespace CodeFirst
         public decimal Price { get; set; }
         public decimal TotalPrice { get; set; }
         public string CustomerName { get; set; }
+        public string CustomerSurname { get; set; }
     }
 }
