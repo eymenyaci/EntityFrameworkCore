@@ -79,6 +79,10 @@ Yeni bir migration eklenmelidir. Bu işlem sonrasında ise `update-database` kul
 
 `update-database migration_1`
 
+### EntityFramework Temel Kurallar
+
+####
+
 
 
 
